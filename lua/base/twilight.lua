@@ -1,11 +1,13 @@
 return {
-	{
-		'https://github.com/folke/twilight.nvim.git',
-		event = 'FileType',
-		opts = {},
-		config = function()
-			require('twilight').setup {}
-			-- require('twilight').enable()
-		end,
-	},
+  {
+    'https://github.com/folke/twilight.nvim.git',
+    event = 'VeryLazy',
+    keys = {
+      { '<leader>vt', '<cmd>Twilight<cr>', desc = 'Twilight' },
+    },
+    opts = {},
+    config = function()
+      require('twilight').setup {}
+    end,
+  },
 }

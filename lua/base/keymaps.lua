@@ -4,7 +4,7 @@ local map = vim.api.nvim_set_keymap
 -- general mappings
 map('n', '<leader>q', '<cmd>confirm qa<cr>', { desc = 'Close all' })
 map('n', '<leader>!q', '<cmd>qa!<cr>', { desc = 'Force Close all' })
-map('n', '<leader>x', '<cmd>bd<cr>', { desc = 'Close' })
+map('n', '<leader>x', '<cmd>confirm bd<cr>', { desc = 'Close' })
 map('n', '<leader>!x', '<cmd>bd!<cr>', { desc = 'Force Close' })
 map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 map('n', '<leader>m', '<cmd>Mason<cr>', { desc = 'Mason' })

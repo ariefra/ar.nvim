@@ -9,7 +9,7 @@ return {
 	-- codeium
 	{
 		'https://github.com/Exafunction/codeium.vim',
-		event = 'FileType',
+		event = 'VeryLazy',
 		cmd = { 'Codeium' },
 		config = function() end,
 	},

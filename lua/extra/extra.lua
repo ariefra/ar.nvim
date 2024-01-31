@@ -1,0 +1,55 @@
+return {
+	-- {
+	--   'https://github.com/max397574/better-escape.nvim.git',
+	--   event = 'InsertEnter',
+	--   opts = {},
+	-- },
+	-- {
+	-- 	'https://github.com/ziontee113/icon-picker.nvim.git',
+	-- 	dependencies = { 'https://github.com/stevearc/dressing.nvim.git' },
+	-- 	cmd = { 'IconPickerInsert', 'IconPickerNormal', 'IconPickerYank' },
+	-- 	config = function()
+	-- 		require 'dressing'
+	-- 		require('icon-picker').setup { disable_legacy_commands = true }
+	-- 	end,
+	-- },
+	-- {
+	-- 	'https://github.com/simrat39/symbols-outline.nvim.git',
+	-- 	cmd = { 'SymbolsOutline' },
+	-- 	config = function()
+	-- 		require('symbols-outline').setup(require 'custom.configs.symbols-outline')
+	-- 	end,
+	-- },
+	-- 	"junegunn/vim-easy-align",
+	-- 	cmd = { "EasyAlign" },
+	-- },
+	-- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+	-- { import = "lazyvim.plugins.extras.coding.copilot" },
+	-- { 'https://github.com/akinsho/bufferline.nvim.git', },
+	-- { 'https://github.com/dstein64/vim-startuptime.git', cmd = 'StartupTime' },
+	-- { 'https://github.com/folke/flash.nvim.git', },
+	-- { 'https://github.com/folke/lazy.nvim.git', },
+	-- { 'https://github.com/folke/neoconf.nvim.git', },
+	-- { 'https://github.com/folke/neodev.nvim.git', },
+	-- { 'https://github.com/folke/noice.nvim.git', },
+	-- { 'https://github.com/folke/persistence.nvim.git', },
+	-- { 'https://github.com/folke/todo-comments.nvim.git', },
+	-- { 'https://github.com/folke/trouble.nvim.git', },
+	-- { 'https://github.com/JoosepAlviste/nvim-ts-context-commentstring.git', },
+	-- { 'https://github.com/kmarius/jsregexp', },
+	-- { 'https://github.com/LazyVim/LazyVim.git', },
+	-- { "https://github.com/lewis6991/gitsigns.nvim.git" },
+	-- { 'https://github.com/mfussenegger/nvim-lint.git', },
+	-- { 'https://github.com/nvimdev/dashboard-nvim.git', },
+	-- { 'https://github.com/nvim-lualine/lualine.nvim.git', },
+	-- { 'https://github.com/nvim-pack/nvim-spectre.git', },
+	-- { 'https://github.com/nvim-telescope/telescope-fzf-native.nvim.git', },
+	-- { 'https://github.com/nvim-tree/nvim-web-devicons.git', },
+	-- { 'https://github.com/nvim-treesitter/nvim-treesitter-context.git', },
+	-- { 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git', },
+	-- { 'https://github.com/rafamadriz/friendly-snippets.git', },
+	-- { 'https://github.com/RRethy/vim-illuminate.git', },
+	-- { 'https://github.com/saadparwaiz1/cmp_luasnip.git', },
+	-- { 'https://github.com/stevearc/dressing.nvim.git', },
+	-- { 'https://github.com/windwp/nvim-ts-autotag.git', },
+}
