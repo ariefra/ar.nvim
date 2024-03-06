@@ -1,8 +1,8 @@
 return {
 	{
-		'https://github.com/lewis6991/gitsigns.nvim',
+		'https://github.com/lewis6991/gitsigns.nvim.git',
 		opts = {},
-		event = 'VeryLazy',
+		event = 'BufReadPost',
 		config = function()
 			require('gitsigns').setup {
 				signs = {
@@ -55,45 +55,39 @@ return {
 
 					-- Navigation
 					map('n', ']g', function()
-						if vim.wo.diff then
-							return ']g'
-						end
-						vim.schedule(function()
-							gs.next_hunk()
-						end)
+						if vim.wo.diff then return ']g' end
+						vim.schedule(function() gs.next_hunk() end)
 						return '<Ignore>'
 					end, { desc = 'Gitsgins next_hunk', expr = true })
 					map('n', '[g', function()
-						if vim.wo.diff then
-							return '[g'
-						end
-						vim.schedule(function()
-							gs.prev_hunk()
-						end)
+						if vim.wo.diff then return '[g' end
+						vim.schedule(function() gs.prev_hunk() end)
 						return '<Ignore>'
 					end, { desc = 'Gitsgins prev_hunk', expr = true })
 
 					-- Actions
 					map('n', '<leader>gs', gs.stage_hunk, { desc = 'Gitsgins stage_hunk' })
 					map('n', '<leader>gr', gs.reset_hunk, { desc = 'Gitsgins reset_hunk' })
-					map('v', '<leader>gs', function()
-						gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-					end, { desc = 'Gitsgins stage_hunk' })
-					map('v', '<leader>gr', function()
-						gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-					end, { desc = 'Gitsgins reset_hunk' })
+					map(
+						'v',
+						'<leader>gs',
+						function() gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+						{ desc = 'Gitsgins stage_hunk' }
+					)
+					map(
+						'v',
+						'<leader>gr',
+						function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+						{ desc = 'Gitsgins reset_hunk' }
+					)
 					map('n', '<leader>gS', gs.stage_buffer, { desc = 'Gitsgins stage_buffer' })
 					map('n', '<leader>gu', gs.undo_stage_hunk, { desc = 'Gitsgins undo_stage_hunk' })
 					map('n', '<leader>gR', gs.reset_buffer, { desc = 'Gitsgins reset_buffer' })
 					map('n', '<leader>gp', gs.preview_hunk, { desc = 'Gitsgins preview_hunk' })
-					map('n', '<leader>gb', function()
-						gs.blame_line { full = true }
-					end, { desc = 'Gitsgins blame_line' })
+					map('n', '<leader>gb', function() gs.blame_line { full = true } end, { desc = 'Gitsgins blame_line' })
 					map('n', '<leader>gB', gs.toggle_current_line_blame, { desc = 'Gitsgins toggle_current_line_blame' })
 					map('n', '<leader>gd', gs.diffthis, { desc = 'Gitsgins diffthis' })
-					map('n', '<leader>gD', function()
-						gs.diffthis '~'
-					end, { desc = 'Gitsgins diffthis ~' })
+					map('n', '<leader>gD', function() gs.diffthis '~' end, { desc = 'Gitsgins diffthis ~' })
 					map('n', '<leader>gt', gs.toggle_deleted, { desc = 'Gitsgins toggle_deleted' })
 
 					-- Text object

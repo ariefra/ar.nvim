@@ -1,3 +1,3 @@
 return {
-	-- { 'https://github.com/CWood-sdf/pineapple' },
+	-- { 'https://github.com/CWood-sdf/pineapple.git' },
 }

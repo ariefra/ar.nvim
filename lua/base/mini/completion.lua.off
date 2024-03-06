@@ -1,0 +1,23 @@
+return {
+	{
+		'https://github.com/echasnovski/mini.completion',
+		keys = {
+			{ '<c-space>', '<cmd>lua MiniCompletion.start()<cr>', desc = 'Mini Completion' },
+			{ '<c-s-space>', '<cmd>lua MiniCompletion.fallback()<cr>', desc = 'Mini Fallback' },
+		},
+		config = function()
+			require('mini.completion').setup {
+				-- delay = { completion = 0, info = 0, signature = 0 },
+				window = {
+					info = { height = 25, width = 80, border = 'none' },
+					signature = { height = 25, width = 80, border = 'none' },
+				},
+				-- mappings = {
+				-- 	force_twostep = '<c-space>', -- Force two-step completion
+				-- 	force_fallback = '<c-s-space>', -- Force fallback completion
+				-- },
+				-- set_vim_settings = true,
+			}
+		end,
+	},
+}

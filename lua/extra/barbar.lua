@@ -1,3 +1,3 @@
 return {
-	{ 'https://github.com/romgrk/barbar.nvim', opts = {}, event = 'VeryLazy' },
+	{ 'https://github.com/romgrk/barbar.nvim.git', opts = {}, event = 'VeryLazy' },
 }

@@ -27,12 +27,12 @@ return {
 		},
 		dependencies = {
 			-- Telescope Extensions
-			{ 'https://github.com/xiyaowong/telescope-emoji.nvim' },
-			{ 'https://github.com/ghassan0/telescope-glyph.nvim' },
+			{ 'https://github.com/xiyaowong/telescope-emoji.nvim.git' },
+			{ 'https://github.com/ghassan0/telescope-glyph.nvim.git' },
 			{ 'https://github.com/nvim-telescope/telescope-fzf-native.nvim.git', build = { 'make' } },
 			{
 				'https://github.com/nvim-telescope/telescope-media-files.nvim.git',
-				dependencies = { 'https://github.com/nvim-lua/popup.nvim' },
+				dependencies = { 'https://github.com/nvim-lua/popup.nvim.git' },
 			},
 			{ 'https://github.com/nvim-telescope/telescope-ui-select.nvim.git' },
 		},

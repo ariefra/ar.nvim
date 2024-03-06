@@ -36,7 +36,7 @@ return {
 	-- { 'https://github.com/folke/todo-comments.nvim.git', },
 	-- { 'https://github.com/folke/trouble.nvim.git', },
 	-- { 'https://github.com/JoosepAlviste/nvim-ts-context-commentstring.git', },
-	-- { 'https://github.com/kmarius/jsregexp', },
+	-- { 'https://github.com/kmarius/jsregexp.git', },
 	-- { 'https://github.com/LazyVim/LazyVim.git', },
 	-- { "https://github.com/lewis6991/gitsigns.nvim.git" },
 	-- { 'https://github.com/mfussenegger/nvim-lint.git', },
