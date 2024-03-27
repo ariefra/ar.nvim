@@ -8,11 +8,13 @@ return {
 				'https://github.com/Exafunction/codeium.nvim.git',
 				cmd = 'Codeium',
 				build = ':Codeium Auth',
-				opts = {},
-        dependencies = {	{ 'https://github.com/nvim-lua/plenary.nvim.git', lazy = true, },},
+				keys = { { '<leader>vc', '<cmd>Codeium Chat<cr>', mode = '', desc = 'Codeium Chat [web]' } },
+				opts = {
+					enable_chat = true,
+				},
+				dependencies = { { 'https://github.com/nvim-lua/plenary.nvim.git', lazy = true } },
 			},
 		},
-		---@param opts cmp.ConfigSchema
 		opts = function(_, opts)
 			table.insert(opts.sources, 1, {
 				name = 'codeium',

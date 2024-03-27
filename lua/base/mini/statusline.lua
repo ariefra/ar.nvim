@@ -1,7 +1,7 @@
 return {
 	{
 		'https://github.com/echasnovski/mini.statusline',
-		event = 'BufReadPre',
+		event = { 'BufAdd', 'BufReadPost' },
 		config = function()
 			local MiniStatusline = require 'mini.statusline'
 			vim.opt.laststatus = 3
@@ -18,21 +18,21 @@ return {
 						local fileinfo = MiniStatusline.section_fileinfo { trunc_width = 120 }
 						local location = MiniStatusline.section_location { trunc_width = 75 }
 						local search = MiniStatusline.section_searchcount { trunc_width = 75 }
-						vim.opt.laststatus = 3
+						-- vim.opt.laststatus = 3
 
 						return MiniStatusline.combine_groups {
 							{ hl = mode_hl },
 							{ strings = { mode } },
-							{ hl = 'MiniStatuslineInactive', strings = { git, diagnostics } },
+							{ hl = 'MiniStatuslineInactive', strings = { git, diagnostics, search } },
 							'%=', -- Start center alignment
 							'%<', -- Mark general truncate point
 							{ strings = { filename } },
 							'%=', -- start right alignment
 							{ hl = 'MiniStatuslineInactive', strings = { fileinfo } },
-							{ strings = { search, location } },
+							{ strings = { location } },
 						}
 					end,
-					inactive = function() vim.opt.laststatus = 0 end,
+					inactive = function() end,
 				},
 				set_vim_settings = false,
 			}

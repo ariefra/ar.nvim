@@ -4,6 +4,7 @@ return {
 		'https://github.com/echasnovski/mini.fuzzy.git',
 		--config = function() require('mini.fuzzy').setup {} end,
 		opts = {},
+		optional = true,
 		lazy = true,
 	},
 	{
@@ -14,14 +15,37 @@ return {
 	},
 	{
 		'https://github.com/echasnovski/mini.bufremove.git',
+		optional = true,
 		--config = function() require('mini.bufremove').setup {} end,
 		opts = {},
-		event = 'BufHidden',
+		-- event = 'BufHidden',
 	},
 	{
 		'https://github.com/echasnovski/mini.hipatterns.git',
-		--config = function() require('mini.hipatterns').setup {} end,
-		opts = {},
+		keys = {
+			{ '<leader>cc', '<cmd>lua MiniHipatterns.toggle()<cr>', mode = 'n', desc = 'Mini Hipatterns' },
+		},
+		config = function()
+			local hipatterns = require 'mini.hipatterns'
+			hipatterns.setup {
+				highlighters = {
+					fixme = { pattern = 'FIXME|ERROR', group = 'MiniHipatternsFixme' },
+					hack = { pattern = 'HACK', group = 'MiniHipatternsHack' },
+					todo = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
+					note = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
+
+					hex_color = hipatterns.gen_highlighter.hex_color {},
+				},
+
+				delay = {
+					-- How much to wait for update after every text change
+					text_change = 100,
+
+					-- How much to wait for update after window scroll
+					scroll = 100,
+				},
+			}
+		end,
 		event = 'BufReadPost',
 	},
 	{
@@ -34,7 +58,7 @@ return {
 		'https://github.com/echasnovski/mini.move.git',
 		--config = function() require('mini.move').setup {} end,
 		opts = {},
-		event = 'VimEnter',
+		event = 'ModeChanged *:v',
 	},
 	{
 		'https://github.com/echasnovski/mini.pairs.git',
@@ -94,6 +118,21 @@ return {
 			require('mini.misc').setup_auto_root()
 			require('mini.misc').setup_restore_cursor()
 		end,
+	},
+	{
+		'https://github.com/echasnovski/mini.base16.git',
+		lazy = true,
+		config = function()
+			require('mini.base16').setup {
+				palette = require('mini.base16').mini_palette('#000000', '#bbbbbb', 10),
+				use_cterm = nil,
+				plugins = {
+					default = true,
+				},
+			}
+		end,
+		-- opts = {},
+		-- event = 'ColorschemePre',
 	},
 	{
 		-- 'https://github.com/echasnovski/mini.nvim.git',

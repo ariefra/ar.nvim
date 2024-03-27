@@ -16,17 +16,23 @@ return {
 				signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 				numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
 				linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-				word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+				word_diff = true, -- Toggle with `:Gitsigns toggle_word_diff`
+				-- show_deleted = true,
 				watch_gitdir = {
 					follow_files = true,
+				},
+				diff_opts = {
+					algorithm = 'minimal',
+					ignore_whitespace = true,
+					ignore_blank_lines = true,
 				},
 				attach_to_untracked = true,
 				current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
 				current_line_blame_opts = {
 					virt_text = true,
-					virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-					delay = 200,
-					ignore_whitespace = false,
+					virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
+					delay = 300,
+					ignore_whitespace = true,
 					virt_text_priority = 100,
 				},
 				current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
@@ -89,6 +95,7 @@ return {
 					map('n', '<leader>gd', gs.diffthis, { desc = 'Gitsgins diffthis' })
 					map('n', '<leader>gD', function() gs.diffthis '~' end, { desc = 'Gitsgins diffthis ~' })
 					map('n', '<leader>gt', gs.toggle_deleted, { desc = 'Gitsgins toggle_deleted' })
+					map('n', '<leader>gw', gs.toggle_word_diff, { desc = 'Gitsgins toggle_word_diff' })
 
 					-- Text object
 					map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Gitsgins select_hunk' })

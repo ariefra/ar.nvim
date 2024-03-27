@@ -7,27 +7,26 @@ o.signcolumn = 'number'
 o.numberwidth = 4
 o.number = true
 o.relativenumber = false
--- o.laststatus = 3
+o.laststatus = 0
 -- o.showcmd = true
 o.showcmdloc = 'statusline'
 o.statusline = nil
 o.cmdheight = 0
 -- o.foldmethod = 'indent'
 o.guicursor = 'i-ci-ve:hor1'
-o.fillchars = { eob = ' ' }
-o.listchars = {
-	tab = '  ',
-	-- eol = '⤶',
-	-- space = '␠',
-	-- multispace = '   ␠',
-	-- lead = '.',
-	-- leadmultispace = '   .',
-	-- trail = '.',
-	-- extends = '⋯',
-	-- precedes = '⋯',
-	-- conceal = '⋆',
-	-- nbsp = '␠',
-}
+o.fillchars = 'eob: '
+o.listchars = 'tab:   '
+-- eol = '⤶',
+-- space = '␠',
+-- multispace = '   ␠',
+-- lead = '.',
+-- leadmultispace = '   .',
+-- trail = '.',
+-- extends = '⋯',
+-- precedes = '⋯',
+-- conceal = '⋆',
+-- nbsp = '␠',
+-- }
 -- o.showtabline = 1
 o.cursorline = true
 o.timeoutlen = 200
@@ -40,8 +39,7 @@ o.timeoutlen = 200
 -- o.list = true
 
 local g = vim.g
-g.ministarter_autoopen = true
--- g.mapleader = '\\'
+-- g.ministarter_autoopen = false
 
 g.loaded_python3_provider = 0
 g.loaded_node_provider = 0

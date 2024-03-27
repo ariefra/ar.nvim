@@ -1,7 +1,8 @@
-local lspserver = { 'lua-language-server', 'bash-language-server' }
+local masontools = { 'lua_ls', 'bashls' }
+local lspserver = { 'lua-language-server', 'bash-language-server', 'rust-analyzer', 'clangd' }
 local dap = {}
 local linter = { 'selene', 'shellcheck' }
-local formatter = { 'stylua', 'beautysh' }
+local formatter = { 'stylua' }
 
 -- Diagnostic tooltip
 -- vim.o.mouse = 'nvi'
@@ -17,6 +18,10 @@ local formatter = { 'stylua', 'beautysh' }
 --     pos = { mousepos.line - 1, mousepos.column },
 --   }
 -- end, {})
+
+vim.diagnostic.config {
+	virtual_text = false,
+}
 
 return {
 	{
@@ -79,9 +84,10 @@ return {
 		},
 		config = function()
 			local lspcfg = require 'lspconfig'
-			local capabilities =
-				vim.fn.extend(require('cmp_nvim_lsp').default_capabilities(), vim.lsp.protocol.make_client_capabilities())
+			-- local capabilities = vim.fn.extend(require('cmp_nvim_lsp').default_capabilities(), vim.lsp.protocol.make_client_capabilities())
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
+
 			local handlers = {
 				function(server_name) -- default handler (optional)
 					require('lspconfig')[server_name].setup {
@@ -109,7 +115,7 @@ return {
 			}
 			require('mason').setup()
 			require('mason-lspconfig').setup {
-				ensure_installed = vim.tbl_extend('keep', lspserver, formatter, linter, dap),
+				ensure_installed = masontools,
 				handlers = handlers,
 			}
 		end,

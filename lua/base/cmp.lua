@@ -6,7 +6,7 @@ return {
 			{ 'https://github.com/hrsh7th/cmp-nvim-lsp.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-buffer.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-path.git', lazy = true },
-			{ 'https://github.com/Exafunction/codeium.nvim.git', lazy = true },
+			{ 'https://github.com/Exafunction/codeium.nvim.git', lazy = true, optional = true },
 			{ 'https://github.com/hrsh7th/cmp-emoji.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-nvim-lua.git', lazy = true },
 			{ 'https://github.com/saadparwaiz1/cmp_luasnip.git' },
@@ -18,7 +18,6 @@ return {
 			local defaults = require 'cmp.config.default'()
 			return {
 				sources = cmp.config.sources {
-					{ name = 'codeium' },
 					{ name = 'nvim_lsp' },
 					{ name = 'nvim_lua' },
 					{ name = 'path' },
@@ -29,6 +28,10 @@ return {
 				completion = {
 					completeopt = 'menu,menuone,preview,longest',
 				},
+				-- enabled = function()
+				-- 	-- disable completion if the cursor is `Comment` syntax group.
+				-- 	return not cmp.config.context.in_syntax_group 'Comment'
+				-- end,
 				snippet = {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
@@ -68,8 +71,16 @@ return {
 						hl_group = 'CmpGhostText',
 					},
 				},
-				window = {},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
 				sorting = defaults.sorting,
+				view = {
+					docs = {
+						auto_open = true,
+					},
+				},
 			}
 		end,
 

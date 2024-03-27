@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+-- local map = vim.api.nvim_set_keymap
 return {
 	{
 		'https://github.com/echasnovski/mini.clue',
@@ -16,8 +16,8 @@ return {
 			{ 's', mode = 'x' },
 			-- Marks
 			{ "'", mode = 'n' },
-			{ '`', mode = 'n' },
 			{ "'", mode = 'x' },
+			{ '`', mode = 'n' },
 			{ '`', mode = 'x' },
 			-- Registers
 			{ '"', mode = 'n' },
@@ -39,45 +39,46 @@ return {
 			{ ']', mode = 'n' },
 			{ ']', mode = 'x' },
 		},
+		opts = {},
 		config = function()
 			local miniclue = require 'mini.clue'
 			miniclue.setup {
 				triggers = {
 					-- Leader triggers
-					{ mode = 'n', keys = '<Leader>' },
-					{ mode = 'x', keys = '<Leader>' },
+					{ keys = '<Leader>', mode = 'n' },
+					{ keys = '<Leader>', mode = 'x' },
 					-- Built-in completion
-					{ mode = 'i', keys = '<C-x>' },
+					{ keys = '<C-x>', mode = 'i' },
 					-- `g` key
-					{ mode = 'n', keys = 'g' },
-					{ mode = 'x', keys = 'g' },
+					{ keys = 'g', mode = 'n' },
+					{ keys = 'g', mode = 'x' },
 					-- `s` key
-					{ mode = 'n', keys = 's' },
-					{ mode = 'x', keys = 's' },
+					{ keys = 's', mode = 'n' },
+					{ keys = 's', mode = 'x' },
 					-- Marks
-					{ mode = 'n', keys = "'" },
-					{ mode = 'n', keys = '`' },
-					{ mode = 'x', keys = "'" },
-					{ mode = 'x', keys = '`' },
+					{ keys = "'", mode = 'n' },
+					{ keys = "'", mode = 'x' },
+					{ keys = '`', mode = 'n' },
+					{ keys = '`', mode = 'x' },
 					-- Registers
-					{ mode = 'n', keys = '"' },
-					{ mode = 'x', keys = '"' },
-					{ mode = 'i', keys = '<C-r>' },
-					{ mode = 'c', keys = '<C-r>' },
+					{ keys = '"', mode = 'n' },
+					{ keys = '"', mode = 'x' },
+					{ keys = '<C-r>', mode = 'i' },
+					{ keys = '<C-r>', mode = 'c' },
 					-- Window commands
-					{ mode = 'n', keys = '<C-w>' },
+					{ keys = '<C-w>', mode = 'n' },
 					-- `z` key
-					{ mode = 'n', keys = 'z' },
-					{ mode = 'x', keys = 'z' },
+					{ keys = 'z', mode = 'n' },
+					{ keys = 'z', mode = 'x' },
 					-- `\` key
-					{ mode = 'n', keys = '\\' },
-					{ mode = 'x', keys = '\\' },
+					{ keys = '\\', mode = 'n' },
+					{ keys = '\\', mode = 'x' },
 					-- `[` key
-					{ mode = 'n', keys = '[' },
-					{ mode = 'x', keys = '[' },
+					{ keys = '[', mode = 'n' },
+					{ keys = '[', mode = 'x' },
 					-- `]` key
-					{ mode = 'n', keys = ']' },
-					{ mode = 'x', keys = ']' },
+					{ keys = ']', mode = 'n' },
+					{ keys = ']', mode = 'x' },
 				},
 				clues = {
 					-- Enhance this by adding descriptions for <Leader> mapping groups
@@ -87,26 +88,26 @@ return {
 					miniclue.gen_clues.registers(),
 					miniclue.gen_clues.windows(),
 					miniclue.gen_clues.z(),
-					{ mode = 'v', keys = 's', desc = '+Surround' },
-					{ mode = 'n', keys = '<leader>c', desc = '+Format' },
-					{ mode = 'n', keys = '<leader>d', desc = '+Delete' },
-					{ mode = 'n', keys = '<leader>g', desc = '+Git' },
-					{ mode = 'n', keys = '<leader>h', desc = '+Jump' },
-					{ mode = 'n', keys = '<leader>m', desc = '+Map' },
-					{ mode = 'n', keys = '<leader>t', desc = '+Pick' },
-					{ mode = 'n', keys = '<leader>v', desc = '+Views' },
-					{ mode = 'n', keys = '<leader>!', desc = '+Force' },
+					{ keys = 's', mode = 'v', desc = '+Surround' },
+					{ keys = '<leader>c', mode = 'n', desc = '+Format' },
+					{ keys = '<leader>d', mode = 'n', desc = '+Delete' },
+					{ keys = '<leader>g', mode = 'n', desc = '+Git' },
+					{ keys = '<leader>h', mode = 'n', desc = '+Jump' },
+					{ keys = '<leader>m', mode = 'n', desc = '+Map' },
+					{ keys = '<leader>t', mode = 'n', desc = '+Pick' },
+					{ keys = '<leader>v', mode = 'n', desc = '+Views' },
+					{ keys = '<leader>!', mode = 'n', desc = '+Force' },
 				},
-				-- windows = {
-				-- 	delay = 1,
-				-- 	anchor = 'NE',
-				-- 	border = 'single',
-				-- 	focusable = false,
-				-- 	relative = 'editor',
-				-- 	style = 'minimal',
-				-- 	width = 100,
-				-- 	zindex = 99,
-				-- },
+				windows = {
+					-- delay = 1,
+					-- anchor = 'NE',
+					-- border = 'solid',
+					-- focusable = false,
+					-- relative = 'editor',
+					-- style = 'minimal',
+					-- width = 100,
+					-- zindex = 99,
+				},
 			}
 		end,
 	},

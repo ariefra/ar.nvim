@@ -1,6 +1,7 @@
 return {
 	{
 		'https://github.com/mfussenegger/nvim-lint.git',
+		event = 'LSPAttach',
 		opts = {
 			-- Event to trigger linters
 			events = { 'BufWritePost', 'BufReadPost', 'InsertLeave' },

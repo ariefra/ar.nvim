@@ -18,7 +18,7 @@ return {
 		},
 		cmd = { 'Pick' },
 		dependencies = { 'https://github.com/echasnovski/mini.extra.git' },
-    opts ={},
+		opts = {},
 		config = function()
 			local win_config = function()
 				local height = math.floor(0.4 * vim.o.lines)
@@ -29,7 +29,7 @@ return {
 					width = width,
 					row = math.floor(0.5 * (vim.o.lines - height)),
 					col = math.floor(0.5 * (vim.o.columns - width)),
-					border = 'none',
+					-- border = 'none',
 				}
 			end
 			require('mini.extra').setup {}
