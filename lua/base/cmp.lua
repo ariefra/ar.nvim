@@ -1,14 +1,18 @@
 return {
 	{
+		-- 'https://github.com/saghen/blink.cmp',
 		'https://github.com/hrsh7th/nvim-cmp.git',
 		event = { 'LspAttach', 'InsertEnter' },
 		dependencies = {
 			{ 'https://github.com/hrsh7th/cmp-nvim-lsp.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-buffer.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-path.git', lazy = true },
-			{ 'https://github.com/Exafunction/codeium.nvim.git', lazy = true, optional = true },
+			{ 'https://github.com/hrsh7th/cmp-cmdline.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-emoji.git', lazy = true },
 			{ 'https://github.com/hrsh7th/cmp-nvim-lua.git', lazy = true },
+			{ 'https://github.com/lukas-reineke/cmp-rg', lazy = true },
+			-- { 'https://github.com/quangnguyen30192/cmp-nvim-ultisnips', lazy = true },
+			{ 'https://github.com/Exafunction/codeium.nvim.git', lazy = true, optional = true },
 			{ 'https://github.com/saadparwaiz1/cmp_luasnip.git' },
 			{ 'https://github.com/petertriho/cmp-git' },
 		},
@@ -24,6 +28,8 @@ return {
 					{ name = 'emoji' },
 					{ name = 'buffer' },
 					{ name = 'luasnip' },
+					{ name = 'ultisnips' },
+					{ name = 'rg' },
 				},
 				completion = {
 					completeopt = 'menu,menuone,preview,longest',

@@ -1,6 +1,8 @@
 return {
 	{
 		'https://github.com/stevearc/dressing.nvim.git',
+		optional = true,
+		lazy = true,
 		opt = {},
 		config = function()
 			require('dressing').setup {

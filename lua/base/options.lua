@@ -39,7 +39,7 @@ o.timeoutlen = 200
 -- o.list = true
 
 local g = vim.g
--- g.ministarter_autoopen = false
+g.ministarter_autoopen = false
 
 g.loaded_python3_provider = 0
 g.loaded_node_provider = 0

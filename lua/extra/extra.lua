@@ -50,6 +50,5 @@ return {
 	-- { 'https://github.com/rafamadriz/friendly-snippets.git', },
 	-- { 'https://github.com/RRethy/vim-illuminate.git', },
 	-- { 'https://github.com/saadparwaiz1/cmp_luasnip.git', },
-	-- { 'https://github.com/stevearc/dressing.nvim.git', },
 	-- { 'https://github.com/windwp/nvim-ts-autotag.git', },
 }

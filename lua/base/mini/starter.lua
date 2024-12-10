@@ -1,7 +1,7 @@
 return {
 	{
 		'https://github.com/echasnovski/mini.starter.git',
-		event = 'VimEnter',
+		-- event = 'VimEnter',
 		keys = {
 			{ '<F4>', '<cmd>lua MiniStarter.open()<cr>', desc = 'Dashboard' },
 		},

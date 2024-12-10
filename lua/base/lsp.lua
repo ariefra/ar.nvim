@@ -34,6 +34,9 @@ return {
 			ensure_installed = vim.tbl_extend('keep', lspserver, formatter, linter, dap),
 			ui = { width = 0.5, height = 0.5, keymaps = { toggle_help = '?m' } },
 		},
+		dependencies = {
+			'https://github.com/echasnovski/mini.pick.git',
+		},
 		config = function(_, opts)
 			require('mason').setup(opts)
 			vim.api.nvim_create_user_command('MasonInstallAll', function()

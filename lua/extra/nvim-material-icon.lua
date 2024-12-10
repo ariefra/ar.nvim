@@ -6,8 +6,8 @@ return {
 			color_icons = true,
 			default = true,
 		}
-		require('nvim-web-devicons').setup {
-			override = require('nvim-material-icon').get_icons(),
-		}
+		-- require('nvim-web-devicons').setup {
+		-- 	override = require('nvim-material-icon').get_icons(),
+		-- }
 	end,
 }

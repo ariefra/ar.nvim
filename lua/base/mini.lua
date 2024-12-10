@@ -1,6 +1,15 @@
 return {
 	{ import = 'base.mini' },
 	{
+		'https://github.com/echasnovski/mini.icons',
+		optional = true,
+		lazy = true,
+		config = function()
+			require('mini.icons').setup {}
+			require('mini.icons').mock_nvim_web_devicons()
+		end,
+	},
+	{
 		'https://github.com/echasnovski/mini.fuzzy.git',
 		--config = function() require('mini.fuzzy').setup {} end,
 		opts = {},

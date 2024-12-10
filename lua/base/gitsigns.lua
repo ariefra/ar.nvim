@@ -48,9 +48,9 @@ return {
 					row = 1,
 					col = 2,
 				},
-				yadm = {
-					enable = false,
-				},
+				-- yadm = {
+				-- 	enable = false,
+				-- },
 				on_attach = function(bufnr)
 					local gs = package.loaded.gitsigns
 					local function map(mode, l, r, opts)

@@ -7,7 +7,7 @@ return {
 		cmd = 'Neotree',
 		dependencies = {
 			'https://github.com/MunifTanjim/nui.nvim.git',
-			'https://github.com/nvim-tree/nvim-web-devicons.git',
+			-- 'https://github.com/nvim-tree/nvim-web-devicons.git',
 		},
 		config = function()
 			-- If you want icons for diagnostic errors, you'll need to define them somewhere:
