@@ -6,7 +6,7 @@ return {
     optional = true,
     dependencies = { 'https://github.com/rktjmp/lush.nvim.git' },
   },
-  { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git',            lazy = true },
+  { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git' },
   { 'https://github.com/mellow-theme/mellow.nvim',                        lazy = true, optional = true },
   { 'https://github.com/folke/tokyonight.nvim.git',                       lazy = true, optional = true },
   { 'https://github.com/NLKNguyen/papercolor-theme.git',                  lazy = true, optional = true },
