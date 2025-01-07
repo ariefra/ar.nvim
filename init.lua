@@ -32,8 +32,8 @@ lazy.setup {
     },
   },
 }
-vim.g.colors_name = vim.g.colors_name or 'oxocarbon'
--- vim.g.colors_name = 'mellow'
+-- vim.g.colors_name = vim.g.colors_name or 'oxocarbon'
+-- vim.g.colors_name = 'oxocarbon'
 vim.g.colors_name_dark = vim.g.colors_name_dark or vim.g.colors_name
 vim.g.colors_name_light = vim.g.colors_name_light or vim.g.colors_name
 if vim.g.autolight then
@@ -45,6 +45,8 @@ if vim.g.autolight then
     vim.opt.bg = 'light'
     vim.cmd('colorscheme ' .. (vim.g.colors_name_light or 'habamax'))
   end
+else
+  vim.cmd('colorscheme ' .. (vim.g.colors_name or 'habamax'))
 end
 -- if vim.opt.bg:get() == 'dark' then
 -- else
