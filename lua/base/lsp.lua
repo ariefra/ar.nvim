@@ -1,8 +1,13 @@
-local masontools = { 'lua_ls', 'bashls' }
-local lspserver = { 'lua-language-server', 'bash-language-server', 'rust-analyzer', 'clangd' }
+local masontools = { 'lua_ls' }
+local lspserver = { 'lua-language-server', 'rust-analyzer' }
 local dap = {}
-local linter = { 'selene', 'shellcheck' }
-local formatter = { 'stylua' }
+local linter = { 'selene' }
+local formatter = { 'beautysh', 'stylua' }
+-- local masontools = { 'lua_ls', 'bashls' }
+-- local lspserver = { 'lua-language-server', 'bash-language-server', 'rust-analyzer', 'clangd' }
+-- local dap = {}
+-- local linter = { 'selene', 'shellharden' }
+-- local formatter = { 'shellharden', 'stylua' }
 
 -- Diagnostic tooltip
 -- vim.o.mouse = 'nvi'
