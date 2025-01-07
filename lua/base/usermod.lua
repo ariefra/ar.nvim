@@ -8,6 +8,7 @@ if not vim.loop.fs_stat(userpath) then
       'local hour = tonumber(os.date("%H"))',
       'if hour >= 6 and hour < 18 then vim.o.bg = "light" else vim.o.bg = "dark" end',
       'return {',
+      '{ "https://github.com/nyoom-engineering/oxocarbon.nvim.git", },',
       '-- custom plugins spec here',
       '}'
     },
