@@ -3,9 +3,9 @@ o.shm = 'aIFt'
 o.ts = 2
 o.shiftwidth = 2
 o.expandtab = true
-o.signcolumn = 'number'
-o.numberwidth = 4
-o.number = true
+o.signcolumn = 'auto:1-2'
+o.numberwidth = 1
+-- o.number = true
 o.relativenumber = false
 o.laststatus = 0
 -- o.showcmd = true
@@ -26,7 +26,6 @@ o.listchars = 'tab:   '
 -- precedes = '⋯',
 -- conceal = '⋆',
 -- nbsp = '␠',
--- }
 -- o.showtabline = 1
 o.cursorline = true
 o.timeoutlen = 200
@@ -45,5 +44,6 @@ g.loaded_python3_provider = 0
 g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
-
+-- g.autolight = true
+-- g.colors_name = 'oxocarbon'
 return {}
