@@ -48,5 +48,5 @@ g.loaded_ruby_provider = 0
 -- g.autolight = true
 g.colors_name = 'oxocarbon'
 return {
-  { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', },
+	{ 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', lazy = true },
 }

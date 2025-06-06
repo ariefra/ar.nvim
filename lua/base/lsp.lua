@@ -2,7 +2,7 @@ local masontools = { 'lua_ls' }
 local lspserver = { 'lua-language-server', 'rust-analyzer' }
 local dap = {}
 local linter = { 'selene' }
-local formatter = { 'beautysh', 'stylua' }
+local formatter = { 'beautysh', 'stylua', 'jq' }
 -- local masontools = { 'lua_ls', 'bashls' }
 -- local lspserver = { 'lua-language-server', 'bash-language-server', 'rust-analyzer', 'clangd' }
 -- local dap = {}
@@ -143,7 +143,7 @@ return {
 				html = formatter,
 				javascript = formatter,
 				md = formatter,
-				sh = formatter,
+				-- sh = formatter,
 			},
 			format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		},
