@@ -1,7 +1,12 @@
-local masontools = { 'lua_ls' }
-local lspserver = { 'lua-language-server', 'rust-analyzer' }
+local servers = {
+	['lua_ls'] = 'lua-language-server',
+	['rust_analyzer'] = 'rust-analyzer',
+	['bashls'] = 'bash-language-server',
+}
+local masontools = vim.tbl_keys(servers)
+local lspserver = vim.tbl_values(servers)
 local dap = {}
-local linter = { 'selene' }
+local linter = { 'selene' } -- , 'shellcheck', 'shellharden' }
 local formatter = { 'beautysh', 'stylua', 'jq' }
 -- local masontools = { 'lua_ls', 'bashls' }
 -- local lspserver = { 'lua-language-server', 'bash-language-server', 'rust-analyzer', 'clangd' }
@@ -25,7 +30,7 @@ local formatter = { 'beautysh', 'stylua', 'jq' }
 -- end, {})
 
 vim.diagnostic.config {
-	virtual_text = false,
+	virtual_text = true,
 }
 
 return {
@@ -84,7 +89,7 @@ return {
 	},
 	{
 		'https://github.com/williamboman/mason-lspconfig.nvim.git',
-		event = 'BufReadPost',
+		event = 'FileType',
 		build = { ':MasonInstallAll' },
 		dependencies = {
 			'https://github.com/williamboman/mason.nvim.git',
@@ -102,24 +107,29 @@ return {
 						capabilities = capabilities,
 					}
 				end,
-				['lua_ls'] = function()
-					lspcfg.lua_ls.setup {
-						settings = {
-							Lua = {
-								runtime = { version = 'LuaJIT' },
-								completion = {
-									callSnippet = 'both',
-									keywordSnippet = 'both',
-									displayContext = 5,
-								},
-								diagnostics = {
-									disable = { 'lowercase-global' },
-									globals = { 'vim' },
-								},
-							},
-						},
-					}
-				end,
+				-- ['lua_ls'] = function()
+-- 					lspcfg.lua_ls.setup {
+-- 						settings = {
+-- 							Lua = {
+-- 								workspace = {
+-- 									library = {
+-- 										vim.fn.expand("$VIMRUNTIME/lua"),
+-- 										vim.fn.stdpath("config"),
+-- 									},
+-- 								},
+-- 								runtime = {
+-- 									version = 'LuaJIT',
+-- 								},
+-- 								diagnostics = {
+-- 									globals = { 'vim' },
+-- 								},
+-- 								telemetry = {
+-- 									enable = false,
+-- 								},
+-- 							},
+-- 						},
+-- 					}
+-- 				end,
 			}
 			require('mason').setup()
 			require('mason-lspconfig').setup {
@@ -138,12 +148,9 @@ return {
     },
 		opts = {
 			formatters_by_ft = {
-				lua = formatter,
-				json = formatter,
-				html = formatter,
-				javascript = formatter,
-				md = formatter,
-				-- sh = formatter,
+				lua = { 'stylua' },
+				json = { 'jq' },
+				sh = { 'beautysh' },
 			},
 			format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		},
