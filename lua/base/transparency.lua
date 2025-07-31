@@ -5,6 +5,10 @@ local M = {
   lazy = true,
 }
 
+function M.config()
+  M.toggle()
+end
+
 function M.toggle()
   local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
   if normal_hl.background == nil then
@@ -21,6 +25,9 @@ function M.toggle()
       "ColorColumn",
       "CursorLine",
       "CursorLineNr",
+      "LineNr",
+      "FoldColumn",
+      "Folded",
       "SignColumn",
       "StatusLine",
       "StatusLineNC",
