@@ -1,4 +1,9 @@
-local M = {}
+if vim.bo.filetype == 'lazy' then return {} end
+
+local M = {
+  "folke/lazy.nvim",
+  lazy = true,
+}
 
 function M.toggle()
   local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
