@@ -1,7 +1,7 @@
 local o = vim.opt
 o.shm = 'aIFt'
-o.ts = 2
-o.shiftwidth = 2
+o.ts = 8
+o.shiftwidth = 8
 o.expandtab = true
 o.signcolumn = 'auto:1-2'
 o.numberwidth = 1
@@ -46,7 +46,11 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- g.autolight = true
-g.colors_name = 'oxocarbon'
+g.colors_name = 'pencil'
+vim.api.nvim_set_hl(0, 'Comment', { fg = '#5c6370' })
+
 return {
-	{ 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', lazy = true },
+
+        { 'https://github.com/preservim/vim-colors-pencil.git', },
+        -- { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', lazy = true },
 }

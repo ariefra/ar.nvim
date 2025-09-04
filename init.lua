@@ -32,6 +32,8 @@ lazy.setup {
     },
   },
 }
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 8
 -- vim.g.colors_name = vim.g.colors_name or 'oxocarbon'
 -- vim.g.colors_name = 'oxocarbon'
 vim.g.colors_name_dark = vim.g.colors_name_dark or vim.g.colors_name
