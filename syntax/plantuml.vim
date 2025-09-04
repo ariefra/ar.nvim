@@ -2,11 +2,11 @@
 " Language:     PlantUML
 " License:      VIM LICENSE
 if exists('b:current_syntax')
-  finish
+	finish
 endif
 
 if v:version < 600
-  syntax clear
+	syntax clear
 endif
 
 let s:cpo_orig=&cpoptions
@@ -107,13 +107,13 @@ syntax match plantumlNoteMultiLineStart /\%(^\s*[rh]\?\%(note\|legend\)\)\@<=\s\
 
 " Class
 syntax region plantumlClass
-      \ start=/\%(\%(class\|interface\|object\)\s[^{]\+\)\@<=\zs{/
-      \ end=/^\s*}/
-      \ contains=plantumlClassArrows,
-      \          plantumlClassKeyword,
-      \          @plantumlClassOp,
-      \          plantumlClassSeparator,
-      \          plantumlComment
+	    \ start=/\%(\%(class\|interface\|object\)\s[^{]\+\)\@<=\zs{/
+	    \ end=/^\s*}/
+	    \ contains=plantumlClassArrows,
+	    \          plantumlClassKeyword,
+	    \          @plantumlClassOp,
+	    \          plantumlClassSeparator,
+	    \          plantumlComment
 
 syntax match plantumlClassPublic      /^\s*+\s*\w\+/ contained
 syntax match plantumlClassPrivate     /^\s*-\s*\w\+/ contained
@@ -122,9 +122,9 @@ syntax match plantumlClassPackPrivate /^\s*\~\s*\w\+/ contained
 syntax match plantumlClassSeparator   /__\%(.\+__\)\?\|==\%(.\+==\)\?\|--\%(.\+--\)\?\|\.\.\%(.\+\.\.\)\?/ contained
 
 syntax cluster plantumlClassOp contains=plantumlClassPublic,
-      \                                 plantumlClassPrivate,
-      \                                 plantumlClassProtected,
-      \                                 plantumlClassPackPrivate
+	    \                                 plantumlClassPrivate,
+	    \                                 plantumlClassProtected,
+	    \                                 plantumlClassPackPrivate
 
 " Strings
 syntax match plantumlSpecialString /\\n/ contained
@@ -160,10 +160,10 @@ syntax match plantumlUsecaseActor /^\s*:.\{-1,}:/ contains=plantumlSpecialString
 
 " Mindmap diagram
 let s:mindmapHilightLinks = [
-      \ 'WarningMsg', 'Directory', 'Special', 'MoreMsg', 'Statement', 'Title',
-      \ 'Question', 'LineNr', 'ModeMsg', 'Title', 'MoreMsg', 'SignColumn',
-      \ 'Function', 'Todo'
-      \  ]
+	    \ 'WarningMsg', 'Directory', 'Special', 'MoreMsg', 'Statement', 'Title',
+	    \ 'Question', 'LineNr', 'ModeMsg', 'Title', 'MoreMsg', 'SignColumn',
+	    \ 'Function', 'Todo'
+	    \  ]
 
 let s:i = 1
 let s:contained = []
@@ -171,11 +171,11 @@ let s:mindmap_color = '\(\[#[^\]]\+\]\)\?'
 let s:mindmap_removing_box = '_\?'
 let s:mindmap_options = join([s:mindmap_color, s:mindmap_removing_box], '')
 while s:i < len(s:mindmapHilightLinks)
-  execute 'syntax match plantumlMindmap' . s:i . ' /^\([-+*]\)\1\{' . (s:i - 1) . '}' . s:mindmap_options . '\(:\|\s\+\)/ contained'
-  execute 'syntax match plantumlMindmap' . s:i . ' /^\s\{' . (s:i - 1) . '}\*' . s:mindmap_options . '\(:\|\s\+\)/ contained'
-  execute 'highlight default link plantumlMindmap' . s:i . ' ' . s:mindmapHilightLinks[s:i - 1]
-  call add(s:contained, 'plantumlMindmap' . s:i)
-  let s:i = s:i + 1
+	execute 'syntax match plantumlMindmap' . s:i . ' /^\([-+*]\)\1\{' . (s:i - 1) . '}' . s:mindmap_options . '\(:\|\s\+\)/ contained'
+	execute 'syntax match plantumlMindmap' . s:i . ' /^\s\{' . (s:i - 1) . '}\*' . s:mindmap_options . '\(:\|\s\+\)/ contained'
+	execute 'highlight default link plantumlMindmap' . s:i . ' ' . s:mindmapHilightLinks[s:i - 1]
+	call add(s:contained, 'plantumlMindmap' . s:i)
+	let s:i = s:i + 1
 endwhile
 
 execute 'syntax region plantumlMindmap oneline start=/^\([-+*]\)\1*' . s:mindmap_options . '\s/ end=/$/ contains=' . join(s:contained, ',')

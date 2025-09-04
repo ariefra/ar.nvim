@@ -51,6 +51,6 @@ vim.api.nvim_set_hl(0, 'Comment', { fg = '#5c6370' })
 
 return {
 
-        { 'https://github.com/preservim/vim-colors-pencil.git', },
-        -- { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', lazy = true },
+	      { 'https://github.com/preservim/vim-colors-pencil.git', },
+	      -- { 'https://github.com/nyoom-engineering/oxocarbon.nvim.git', lazy = true },
 }

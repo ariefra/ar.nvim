@@ -6,7 +6,7 @@
 
 " Clear existing syntax
 if exists("b:current_syntax")
-  finish
+	finish
 endif
 
 " Case insensitive matching
